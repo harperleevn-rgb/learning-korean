@@ -59,7 +59,7 @@ body {
     z-index: 1000;
 }
 
-.form-container {
+.form-container, .comments-container {
     background-color: var(--container-bg);
     padding: 2rem;
     border-radius: 15px;

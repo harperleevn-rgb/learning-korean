@@ -3,6 +3,18 @@
 document.addEventListener('DOMContentLoaded', () => {
     const resultDiv = document.getElementById('result');
     const generateBtn = document.getElementById('generate');
+    const themeToggle = document.getElementById('theme-toggle');
+    const body = document.body;
+
+    // Theme Toggle Logic
+    themeToggle.addEventListener('click', () => {
+        body.classList.toggle('light-theme');
+        if (body.classList.contains('light-theme')) {
+            themeToggle.textContent = 'Dark Mode';
+        } else {
+            themeToggle.textContent = 'Light Mode';
+        }
+    });
 
     const getBallColor = (number) => {
         if (number <= 10) return 'yellow';

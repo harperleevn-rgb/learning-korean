@@ -1,1 +1,127 @@
-/* Add styles here */
+/* style.css */
+:root {
+    --bg-color: #1a1a1a;
+    --text-color: #f0f0f0;
+    --accent-color: #4ecca3;
+    --container-bg: #2b2b2b;
+    --shadow-color: rgba(0, 0, 0, 0.5);
+
+    /* Ball Colors */
+    --color-yellow: #f1c40f;
+    --color-blue: #3498db;
+    --color-red: #e74c3c;
+    --color-gray: #95a5a6;
+    --color-green: #2ecc71;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background-image: url("data:image/svg+xml,%3Csvg width='42' height='44' viewBox='0 0 42 44' xmlns='http://www.w3.org/2000/svg'%3E%3Cg id='Page-1' fill='none' fill-rule='evenodd'%3E%3Cg id='brick-wall' fill='%23333333' fill-opacity='0.4'%3E%3Cpath d='M0 0h42v44H0V0zm1 1h40v20H1V1zM0 23h20v20H0V23zm22 0h20v20H22V23z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+}
+
+.container {
+    background-color: var(--container-bg);
+    padding: 2.5rem 3rem;
+    border-radius: 15px;
+    text-align: center;
+    box-shadow: 0 15px 30px var(--shadow-color);
+    width: 90%;
+    max-width: 500px;
+}
+
+h1 {
+    font-size: 2.5rem;
+    color: var(--text-color);
+    margin-bottom: 2rem;
+    font-weight: 600;
+}
+
+.result {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 15px;
+    margin: 2.5rem 0;
+    min-height: 70px;
+}
+
+.ball {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: #fff;
+    box-shadow: inset 0 -5px 5px rgba(0,0,0,0.2), 0 5px 10px rgba(0,0,0,0.4);
+    text-shadow: 0 2px 2px rgba(0,0,0,0.3);
+    transition: transform 0.3s ease;
+}
+
+.ball:hover {
+    transform: scale(1.1);
+}
+
+.ball.yellow { background: var(--color-yellow); }
+.ball.blue   { background: var(--color-blue); }
+.ball.red    { background: var(--color-red); }
+.ball.gray   { background: var(--color-gray); }
+.ball.green  { background: var(--color-green); }
+
+.generate-btn {
+    background-color: var(--accent-color);
+    color: var(--bg-color);
+    border: none;
+    padding: 1rem 2.5rem;
+    font-size: 1.2rem;
+    font-weight: 600;
+    border-radius: 50px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 5px 15px rgba(78, 204, 163, 0.4);
+}
+
+.generate-btn:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 20px rgba(78, 204, 163, 0.6);
+}
+
+.generate-btn:active {
+    transform: translateY(0);
+}
+
+@media (max-width: 480px) {
+    .container {
+        padding: 2rem 1.5rem;
+    }
+
+    h1 {
+        font-size: 2rem;
+    }
+
+    .ball {
+        width: 45px;
+        height: 45px;
+        font-size: 1.2rem;
+    }
+
+    .generate-btn {
+        padding: 0.8rem 2rem;
+        font-size: 1rem;
+    }
+}
